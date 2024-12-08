@@ -5,7 +5,6 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from apps.models import User
 from apps.serializers import SignUpSerializer, LoginSerializer
-from apps.tasks import send_to_email
 
 
 def get_tokens_for_user(user):

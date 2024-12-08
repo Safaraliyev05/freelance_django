@@ -1,7 +1,6 @@
 from django.urls import path
 
-from apps.views import UserListView, FreelancerListView, BusinessOwnerListView
-from apps.views.auth import SignUpAPIView, LoginAPIView
+from apps.views import UserListView, FreelancerListView, BusinessOwnerListView, SignUpAPIView, LoginAPIView
 
 urlpatterns = [
     path('user-list/', UserListView.as_view(), name='user-list'),
