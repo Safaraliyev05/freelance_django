@@ -1,26 +1,8 @@
 from rest_framework.exceptions import ValidationError
 from rest_framework.fields import CharField
-from rest_framework.serializers import ModelSerializer, Serializer
+from rest_framework.serializers import Serializer
 
-from apps.models import User, Freelancer, BusinessOwner
-
-
-class UserModelSerializer(ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['id', 'username', 'email']
-
-
-class FreelanceModelSerializer(ModelSerializer):
-    class Meta:
-        model = Freelancer
-        fields = ['id', ]
-
-
-class BusinessOwnerModelSerializer(ModelSerializer):
-    class Meta:
-        model = BusinessOwner
-        fields = ['id', ]
+from apps.models import User
 
 
 class SignUpSerializer(Serializer):
