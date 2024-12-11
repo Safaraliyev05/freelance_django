@@ -2,7 +2,8 @@ from django.urls import path
 
 from apps.views import UserListView, FreelancerListView, BusinessOwnerListView, SignUpAPIView, LoginAPIView, \
     UserRetrieveAPIView, UserCreateAPIView, UserUpdateAPIView, UserDeleteAPIView, FreelancerDeleteAPIView, \
-    FreelancerUpdateAPIView, FreelancerRetrieveAPIView, FreelancerCreateAPIView
+    FreelancerUpdateAPIView, FreelancerRetrieveAPIView, FreelancerCreateAPIView, BusinessOwnerRetrieveAPIView, \
+    BusinessOwnerCreateAPIView, BusinessOwnerUpdateAPIView, BusinessOwnerDeleteAPIView
 
 urlpatterns = [
     # User url's
@@ -19,6 +20,11 @@ urlpatterns = [
     path('freelancer-delete/<int:pk>/', FreelancerDeleteAPIView.as_view(), name='freelance-delete'),
     # B owner url's
     path('businees-owner-list/', BusinessOwnerListView.as_view(), name='business-owner-list'),
+    path('businees-owner-detail/<int:pk>/', BusinessOwnerRetrieveAPIView.as_view(), name='freelance-detail'),
+    path('businees-owner-create/', BusinessOwnerCreateAPIView.as_view(), name='freelance-create'),
+    path('businees-owner-update/<int:pk>/', BusinessOwnerUpdateAPIView.as_view(), name='freelance-update'),
+    path('businees-owner-delete/<int:pk>/', BusinessOwnerDeleteAPIView.as_view(), name='freelance-delete'),
+    # auth
     path('signup/', SignUpAPIView.as_view(), name='signup'),
     path('login/', LoginAPIView.as_view(), name='login'),
 ]
