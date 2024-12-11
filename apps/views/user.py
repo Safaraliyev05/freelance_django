@@ -3,6 +3,7 @@ from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView, RetrieveAPIView
 
 from apps.models import User
+from apps.permission import IsSuperuser
 from apps.serializers import UserModelSerializer
 
 
@@ -12,6 +13,7 @@ class UserListView(ListAPIView):
     serializer_class = UserModelSerializer
     filter_backends = (SearchFilter,)
     search_fields = ['username', ]
+    permission_classes = [IsSuperuser, ]
 
 
 @extend_schema(tags=['Users'])
