@@ -16,6 +16,8 @@ django-filter = "^24.3"
 drf-spectacular = "^0.28.0"
 djangorestframework-simplejwt = "^5.3.1"
 celery = "^5.4.0"
+pytest = "^8.3.4"
+pytest-django = "^4.9.0"
 
 
 [build-system]
